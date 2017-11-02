@@ -1,10 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Counter from './Counter';
+import { Provider } from 'react-redux';
 
-document.addEventListener('DOMContentLoaded', function() {
+import { configureStore } from './utils';
+import rootReducer from './rootReducer';
+import { TooltipDemo } from './pages';
+
+
+const store = configureStore(rootReducer);
+
+document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
-    React.createElement(Counter),
-    document.getElementById('mount')
+    <Provider store={store}>
+      <TooltipDemo />
+    </Provider>,
+    document.getElementById('mount'),
   );
 });

@@ -1,0 +1,18 @@
+.tooltip {
+  background-color: white;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  text-align: center;
+  width: 20em;
+  height: 5em;
+  border: 1px solid black;
+  overflow: hidden;
+  font-size: 1rem;
+  padding: 2em;
+}
+
+.hide {
+  display: none;
+}
