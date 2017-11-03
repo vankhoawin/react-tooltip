@@ -3,5 +3,10 @@
     ["env", { "modules": false }],
     "stage-0",
     "react"
+  ],
+  "plugins": [
+    "transform-react-constant-elements",
+    "transform-react-remove-prop-types",
+    "lodash"
   ]
 }

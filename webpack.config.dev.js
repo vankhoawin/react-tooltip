@@ -1,14 +1,28 @@
 const path = require('path');
 
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+
+
 module.exports = {
-  context: path.join(__dirname, 'src'),
+  context: __dirname,
   entry: [
-    './main.js',
+    './src/main.js',
   ],
   output: {
     path: path.join(__dirname, 'www'),
     filename: 'bundle.js',
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: 'www/template.ejs',
+      filename: 'index.html',
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+      },
+      inject: true,
+    }),
+  ],
   module: {
     rules: [
       {
